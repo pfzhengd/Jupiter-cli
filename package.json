@@ -1,0 +1,79 @@
+{
+  "name": "jupiter-cli",
+  "version": "0.0.0",
+  "description": "启动项目的脚手架",
+  "main": "lib/main/index.js",
+  "types": "lib/types/index.d.ts",
+  "bin": {
+    "jupiter-cli": "./bin/index"
+  },
+  "scripts": {
+    "build:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "dev": "npm run test && npm run build",
+    "test": "jest --no-cache",
+    "build:dev": "npm run clean && NODE_ENV=development rollup -c",
+    "build:prod": "npm run clean && NODE_ENV=production rollup -c",
+    "clean": "rm -rf lib",
+    "lint": "eslint --fix ./ --ignore-path .eslintignore --ext .ts",
+    "publish:pre": "npm run lint && git checkout master && git merge dev -m 'chore: Merge branch ”dev“' && npm run clean && npm run test && npm run build:prod",
+    "publish:post": "git push --follow-tags && node build-changelog.js && npm publish && git branch -D dev && git checkout -b dev",
+    "publish:patch": "npm run publish:pre && npm version patch -m 'chore: Upgrade to %s for reasons' && npm run publish:post",
+    "publish:major": "npm run publish:pre && npm version major -m 'chore: Upgrade to %s for reasons' && npm run publish:post",
+    "publish:minor": "npm run publish:pre && npm version minor -m 'chore: Upgrade to %s for reasons' && npm run publish:post"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "files": [
+    "lib",
+    "src",
+    "bin"
+  ],
+  "keywords": [],
+  "author": "Pengfei Zheng",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^16.7.2",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.28.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "fs-extra": "^10.0.0",
+    "husky": "^4.3.0",
+    "jest": "^26.1.0",
+    "lint-staged": "^11.0.1",
+    "log-update": "^4.0.0",
+    "ora": "^6.0.0",
+    "rollup": "^2.18.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dts": "^3.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^26.1.1",
+    "tslib": "^2.0.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^8.1.2",
+    "fs-extra": "^10.0.0",
+    "log-update": "^4.0.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.2.0",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.2",
+    "log-update": "^4.0.0"
+  }
+}
