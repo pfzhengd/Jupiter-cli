@@ -1,6 +1,6 @@
 export default {
-  ts: 'http://stash.weimob.com/pengfei.zheng/saas-fe-titan-platform-ts-starter.git',
-  js: 'http://stash.weimob.com/pengfei.zheng/saas-fe-titan-platform-js-starter.git'
+  ts: 'git@github.com:pfzhengd/jupiter-js-starter.git',
+  js: 'git@github.com:pfzhengd/jupiter-ts-starter.git'
 }
 
 export const tempPathName = './.temp'
