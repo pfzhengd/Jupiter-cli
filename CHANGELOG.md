@@ -1,11 +1,3 @@
-## [0.0.3](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.2...v0.0.3) (2021-09-26)
-
-
-
-## [0.0.2](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.1...v0.0.2) (2021-09-26)
-
-
-
 ## [0.0.1](https://github.com/pfzhengd/Jupiter-cli/compare/59ebdd7c5d8072fe30dbe86cf64ab44e3e6ba15e...v0.0.1) (2021-09-26)
 
 
