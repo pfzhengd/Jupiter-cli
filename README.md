@@ -1,7 +1,7 @@
 ## Jupiter-cli
 
 ### 安装
-`npm install @jupiter/jupiter-cli or yarn add @jupiter/jupiter-cli`
+`npm install @jupiterjs/jupiter-cli or yarn add @jupiterjs/jupiter-cli`
 
 ### 使用例子
 ```js
