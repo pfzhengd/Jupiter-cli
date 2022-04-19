@@ -5,11 +5,11 @@ const packageJson = require('../../package.json')
 const { program } = require('commander')
 
 export type Options = {
-  name:string,
-  description:string,
-  author:string,
-  typescript:boolean,
-  gitAddress:string
+  name: string,
+  description: string,
+  author: string,
+  typescript: boolean,
+  gitAddress: string
 }
 
 (async function () {
@@ -61,11 +61,11 @@ export type Options = {
         message: '是否要使用 TypeScript？'
       }
     ]
-    const result:Options = await inquirer.prompt(prompts)
+    const result: Options = await inquirer.prompt(prompts)
     if (result) {
-      let templateUrl = config.ts
+      let templateUrl = config.js
       if (!result.typescript) {
-        templateUrl = config.js
+        templateUrl = config.ts
       }
       clone(templateUrl, tempPathName, result)
     }

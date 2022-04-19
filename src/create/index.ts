@@ -23,7 +23,6 @@ export function createProject (options:Options, sourcePath:string) {
   }
   changePackageJson(options)
   fse.copySync(tempPathName, projectPath)
-  fse.removeSync(`${projectPath}/.git`)
   clearTemp()
 }
 
