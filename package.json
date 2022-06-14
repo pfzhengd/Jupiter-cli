@@ -1,6 +1,6 @@
 {
   "name": "@jupiterjs/jupiter-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "启动项目的脚手架",
   "main": "lib/main/index.js",
   "types": "lib/types/index.d.ts",
@@ -9,9 +9,9 @@
   },
   "scripts": {
     "build:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "dev": "npm run test && npm run build",
+    "dev": "npm run test && npm run build:dev",
     "test": "jest --no-cache",
-    "build:dev": "npm run clean && NODE_ENV=development rollup -c",
+    "build:dev": "npm run clean && NODE_ENV=development rollup -c -w",
     "build:prod": "npm run clean && NODE_ENV=production rollup -c",
     "clean": "rm -rf lib",
     "lint": "eslint --fix ./ --ignore-path .eslintignore --ext .ts",

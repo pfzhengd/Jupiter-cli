@@ -8,7 +8,7 @@ const { spawn } = require('child_process')
 export function clone (repoAddress:string, targetPath:string, options:Options) {
   const log = info('正在下载模板。。。')
   clearTemp()
-  const cmd = spawn('git', ['clone', repoAddress, targetPath])
+  const cmd = spawn('git', ['clone', repoAddress, targetPath], { stdio: 'inherit' })
   cmd.on('close', (status:number, other:any) => {
     log.clear()
     if (status === 0) {
