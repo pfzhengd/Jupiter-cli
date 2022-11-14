@@ -1,5 +1,5 @@
 import { Options } from '../../lib/types'
-import { rootPathName, tempPathName } from '../config'
+import { gitPathName, rootPathName, tempPathName } from '../config'
 const fse = require('fs-extra')
 
 function changePackageJson (options:Options) {
@@ -21,6 +21,7 @@ export function createProject (options:Options, sourcePath:string) {
   if (!fse.pathExistsSync(projectPath)) {
     fse.ensureDir(projectPath)
   }
+  clearGit()
   changePackageJson(options)
   fse.copySync(tempPathName, projectPath)
   clearTemp()
@@ -28,4 +29,8 @@ export function createProject (options:Options, sourcePath:string) {
 
 export function clearTemp () {
   fse.removeSync(tempPathName)
+}
+
+export function clearGit () {
+  fse.removeSync(gitPathName)
 }

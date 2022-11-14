@@ -5,3 +5,4 @@ export default {
 
 export const tempPathName = './.temp'
 export const rootPathName = './'
+export const gitPathName = './.temp/.git'

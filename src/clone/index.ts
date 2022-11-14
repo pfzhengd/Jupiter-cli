@@ -18,4 +18,7 @@ export function clone (repoAddress:string, targetPath:string, options:Options) {
       console.log(chalk.redBright('下载模板时出现了错误', other))
     }
   })
+  cmd.on('error', (errMsg) => {
+    console.log('error', errMsg)
+  })
 }
