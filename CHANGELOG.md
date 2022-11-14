@@ -1,3 +1,13 @@
+## [0.0.7](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.5...v0.0.7) (2022-11-14)
+
+
+### Bug Fixes
+
+* 下载项目模版时，有几率下载不成功。 ([94b285c](https://github.com/pfzhengd/Jupiter-cli/commit/94b285c84cd125d9c018b8db8059d1eb39a266e0))
+* 清除模版中的 .git 目录 ([af2d5a5](https://github.com/pfzhengd/Jupiter-cli/commit/af2d5a5b6c9ba4d3ec80043bd3b12dd5dff45db8))
+
+
+
 ## [0.0.5](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.4...v0.0.5) (2022-04-19)
 
 
