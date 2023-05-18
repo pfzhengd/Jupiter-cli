@@ -1,3 +1,7 @@
+# [0.1.0](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.8-beta.0...v0.1.0) (2023-05-18)
+
+
+
 ## [0.0.8-beta.0](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.7...v0.0.8-beta.0) (2023-05-18)
 
 
