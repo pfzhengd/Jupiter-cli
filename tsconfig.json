@@ -6,6 +6,7 @@
     "sourceMap": false,
     "declarationMap": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "outDir": "./lib",
     "types": ["@types/jest", "@types/node"],
     "lib": ["ESNext", "DOM"]
