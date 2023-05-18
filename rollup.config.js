@@ -1,5 +1,5 @@
-import typescript from 'rollup-plugin-typescript'
-import { terser } from 'rollup-plugin-terser'
+import typescript from '@rollup/plugin-typescript'
+import { terser } from '@rollup/plugin-terser'
 import dts from 'rollup-plugin-dts'
 
 export default () => {
@@ -14,12 +14,7 @@ export default () => {
         }
       ],
       plugins: [
-        typescript(
-          {
-            exclude: 'node_modules/**',
-            typescript: require('typescript')
-          }
-        )
+        typescript({ exclude: 'node_modules/**', tsconfig: './tsconfig.json'})
       ]
     }
   }

@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "esModuleInterop":true,
-    "declaration":true,
-    "sourceMap": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "sourceMap": false,
     "declarationMap": true,
-    "moduleResolution":"node",
-    "types": ["@types/jest","@types/node"],
-    "lib": ["ESNext","DOM"]
+    "moduleResolution": "node",
+    "outDir": "./lib",
+    "types": ["@types/jest", "@types/node"],
+    "lib": ["ESNext", "DOM"]
   }
 }

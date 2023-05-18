@@ -1,4 +1,5 @@
-import { Options } from '../../lib/types'
+
+import { Options } from '..'
 import { gitPathName, rootPathName, tempPathName } from '../config'
 const fse = require('fs-extra')
 
