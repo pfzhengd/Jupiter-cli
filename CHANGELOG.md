@@ -1,10 +1,20 @@
+## [0.0.8-beta.0](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.7...v0.0.8-beta.0) (2023-05-18)
+
+
+### Performance Improvements
+
+* 升级构建命令 ([e50e3ec](https://github.com/pfzhengd/Jupiter-cli/commit/e50e3ec908bdbbdd75fa283eaef365a94a300052))
+* 优化构建命令 ([bce3f6d](https://github.com/pfzhengd/Jupiter-cli/commit/bce3f6d5dd032901c3e0dbef558e5fdc38e66ae4))
+
+
+
 ## [0.0.7](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.5...v0.0.7) (2022-11-14)
 
 
 ### Bug Fixes
 
-* 下载项目模版时，有几率下载不成功。 ([94b285c](https://github.com/pfzhengd/Jupiter-cli/commit/94b285c84cd125d9c018b8db8059d1eb39a266e0))
 * 清除模版中的 .git 目录 ([af2d5a5](https://github.com/pfzhengd/Jupiter-cli/commit/af2d5a5b6c9ba4d3ec80043bd3b12dd5dff45db8))
+* 下载项目模版时，有几率下载不成功。 ([94b285c](https://github.com/pfzhengd/Jupiter-cli/commit/94b285c84cd125d9c018b8db8059d1eb39a266e0))
 
 
 
