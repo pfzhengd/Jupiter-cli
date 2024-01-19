@@ -1,6 +1,6 @@
 import inquirer from 'inquirer'
 import { clone } from './clone'
-import config, { tempPathName } from './config'
+import template, { tempPathName } from './config'
 const packageJson = require('../../package.json')
 const { program } = require('commander')
 
@@ -16,6 +16,7 @@ export type Options = {
   program
     .option('-c, --create', '创建启动项目的模版')
     .option('-v, --version', '查看当前脚手架的版本')
+    .option('-h, --help', '查看帮助')
   program.parse(process.argv)
   const options = program.opts()
   if (options.version) {
@@ -26,7 +27,7 @@ export type Options = {
         name: 'name',
         type: 'input',
         message: '请输入要启动的项目名称：',
-        validate (input) {
+        validate (input:string) {
           const done = this.async()
           if (input.length > 0) {
             done(true)
@@ -37,7 +38,7 @@ export type Options = {
         name: 'description',
         type: 'input',
         message: '请简单的对项目进行描述：',
-        validate (input) {
+        validate (input:string) {
           const done = this.async()
           if (input.length > 0) {
             done(true)
@@ -48,7 +49,7 @@ export type Options = {
         name: 'author',
         type: 'input',
         message: '请输入项目的主要作者：',
-        validate (input) {
+        validate (input:string) {
           const done = this.async()
           if (input.length > 0) {
             done(true)
@@ -63,11 +64,13 @@ export type Options = {
     ]
     const result: Options = await inquirer.prompt(prompts)
     if (result) {
-      let templateUrl = config.js
+      let templateUrl = template.js
       if (!result.typescript) {
-        templateUrl = config.ts
+        templateUrl = template.ts
       }
       clone(templateUrl, tempPathName, result)
     }
+  } else {
+    program.help()
   }
 })()
