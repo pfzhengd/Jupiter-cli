@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/pfzhengd/Jupiter-cli/compare/v0.1.0...v0.1.1) (2024-01-19)
+
+
+### Performance Improvements
+
+* 优化脚手架的使用体验 ([625a90b](https://github.com/pfzhengd/Jupiter-cli/commit/625a90b1fc9200162b4ac39883ba8b7247873773))
+
+
+
 # [0.1.0](https://github.com/pfzhengd/Jupiter-cli/compare/v0.0.8-beta.0...v0.1.0) (2023-05-18)
 
 
