@@ -8,7 +8,7 @@ export type Options = {
   name: string,
   description: string,
   author: string,
-  typescript: boolean,
+  type: 'js'|'ts'|'web',
   gitAddress: string
 }
 
@@ -57,16 +57,38 @@ export type Options = {
         }
       },
       {
-        name: 'typescript',
-        type: 'confirm',
-        message: '是否要使用 TypeScript？'
+        name: 'type',
+        type: 'list',
+        message: '选择一个模版类型',
+        choices: [
+          {
+            name: '纯JS模版，用于启动一个纯JS项目',
+            value: 'js'
+          },
+          {
+            name: 'TS模版，用于启动一个TS项目',
+            value: 'ts'
+          },
+          {
+            name: 'Web模版，用于启动一个Web项目',
+            value: 'web'
+          }
+        ]
       }
     ]
     const result: Options = await inquirer.prompt(prompts)
     if (result) {
-      let templateUrl = template.js
-      if (!result.typescript) {
-        templateUrl = template.ts
+      let templateUrl = ''
+      switch (result.type) {
+        case 'js':
+          templateUrl = template.js
+          break
+        case 'ts':
+          templateUrl = template.ts
+          break
+        case 'web':
+          templateUrl = template.web
+          break
       }
       clone(templateUrl, tempPathName, result)
     }
